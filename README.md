@@ -1,5 +1,7 @@
 KI funktionen:
+- Gespräche halten
 
+Feintuning auf basis eines exsitierendes Sprachmodelles
 Generelle Funktionen:
 - Notizen/Skizzen generieren
   -anhand dessen Quize erstellen
