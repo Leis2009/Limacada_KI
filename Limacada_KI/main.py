@@ -1,5 +1,6 @@
 import urllib.request
 import re
+import tiktoken
 
 """
 class SimpleTokenizerV1:
@@ -101,7 +102,17 @@ def main():
     tokenizer = SimpleTokenizerV2(vocab)
     #print(tokenizer.encode(text))
 
-    print(tokenizer.decode(tokenizer.encode(text)))
+    #print(tokenizer.decode(tokenizer.encode(text)))
+
+    tokenizer = tiktoken.get_encoding("gpt2")
+
+    text = (
+        "Hello, do you like tea? <|endoftext|> In the sunlitterraces""of someunknownPlace.")
+    integers = tokenizer.encode(text, allowed_special="all")
+    #print(integers)
+
+    strings = tokenizer.decode(integers)
+    print(strings)
 
 if __name__ == '__main__':
     main()
